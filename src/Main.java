@@ -1,6 +1,4 @@
-import br.com.dio.dominio.Conteudo;
-import br.com.dio.dominio.Curso;
-import br.com.dio.dominio.Mentoria;
+import br.com.dio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -26,5 +24,37 @@ public class Main {
 //        System.out.println(curso1);
 //        System.out.println(curso2);
 
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("bootcamp java");
+        bootcamp.setDescricao("desbravando o java");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+
+        Dev bolt = new Dev();
+        bolt.setNome("eliardo");
+        bolt.increverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos bolt" + bolt.getConteudosInscritos());
+        bolt.progredir();
+        System.out.println("--progredindo bolt--");
+        System.out.println("Conteudos inscritos bolt" + bolt.getConteudosInscritos());
+        System.out.println("Conteudos concluidos bolt" + bolt.getConteudosConcluidos());
+        System.out.println("xp" + bolt.calcularTotalXp());
+
+
+        System.out.println("------------------------------------------------------");
+        Dev erica = new Dev();
+        erica.setNome("erica");
+        erica.increverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos erica" + erica.getConteudosInscritos());
+        erica.progredir();
+        erica.progredir();
+        erica.progredir();
+        System.out.println("--progredindo erica--");
+        System.out.println("Conteudos inscritos erica" + erica.getConteudosInscritos());
+        System.out.println("Conteudos concluidos erica" + erica.getConteudosConcluidos());
+        System.out.println("Conteudos concluidos erica" + erica.getConteudosConcluidos());
+        System.out.println("xp " + erica.calcularTotalXp());
     }
 }
